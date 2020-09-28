@@ -23,7 +23,6 @@ const DetailList = styled.div`
 
   p {
     margin-top: 0;
-    // margin-buttom: 0;
   }
 `
 
@@ -113,7 +112,7 @@ export default function DetailPage(props) {
   function handleDeleteCustomer(data) {
     userKit
       .deleteCustomer({ id, data })
-      //   .then(res => res.json())
+
       .then(data => {
         setDetailId(data)
         history.push("/home")

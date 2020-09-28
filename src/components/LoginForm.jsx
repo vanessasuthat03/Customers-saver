@@ -79,10 +79,7 @@ export default function LoginForm() {
       .login(data)
       .then(res => res.json())
       .then(data => {
-        console.log("data token", data.token)
         const token = data.token
-        console.log("data", data)
-        console.log(token)
         userKit.setToken(token)
         token ? history.push("/home") : setHaveError(true)
       })

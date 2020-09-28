@@ -48,18 +48,14 @@ export default function CustomerForm({
   })
 
   const onSubmit = (data, e) => {
-    // data.vatNr.substring(0, 3).toUpperCase()
-
     e.target.reset()
 
     if (handleCreateCustomer) {
-      console.log("handleCreateCustomer: data, from customer form", data)
-      console.log("handleCreateCustomer : data.vatNr", data.vatNr)
       let seUpperCase = data.vatNr
         .substring(0, 2)
         .toUpperCase()
         .concat(data.vatNr.substring(2))
-      console.log("seUpperCase", seUpperCase)
+
       data.vatNr = seUpperCase
 
       handleCreateCustomer(data)

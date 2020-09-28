@@ -6,7 +6,6 @@ import Headers from "../components/Headers"
 
 const FormStyle = styled.div`
   text-align: center;
-  // color: #838383;
   color: #eeeeee;
   background-color: black;
 
@@ -41,13 +40,11 @@ const InputStyle = styled.div`
   display: flex;
   flex-direction: column;
   padding-bottom: 40px;
-  // margin-bottom: 80px;
 
   input {
     font-size: 13px;
     padding: 8px;
     margin: 13px;
-    // border-radius: 7px;
     border: none;
     border-bottom: 1px solid #838383;
     margin-bottom: 40px;
@@ -58,18 +55,14 @@ const InputStyle = styled.div`
 
 export default function RegisterForm() {
   const { register, handleSubmit, errors } = useForm()
-
   const userKit = new UserKit()
-
   const onSubmit = (data, e) => {
-    console.log("data from register form", data)
     handleRegister(data)
     e.target.reset()
   }
 
   function handleRegister(data) {
     userKit.register(data)
-    console.log("data i register form", data)
   }
 
   return (

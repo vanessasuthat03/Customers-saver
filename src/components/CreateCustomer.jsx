@@ -13,7 +13,6 @@ export const HomeCreate = styled.div`
 const CreateTextStyle = styled.div`
   background-color: black;
   width: 95%;
-  // color: #fab95b;
   color: #e11d74;
   font-size: 20px;
   padding: 15px 0 15px 0;

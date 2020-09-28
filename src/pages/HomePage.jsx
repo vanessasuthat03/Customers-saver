@@ -13,7 +13,6 @@ export default function HomePage() {
       .getCustomerList()
       .then(res => res.json())
       .then(data => {
-        // console.log("data från get customer", data.results)
         setCustomerList(data.results)
       })
 

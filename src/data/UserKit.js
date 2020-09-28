@@ -22,7 +22,6 @@ export default class {
 
   async login(data) {
     const url = `${ROOT_URL}/api-token-auth/`
-    // const payload = { data }
     return fetch(url, {
       method: "POST",
       headers: this.getPublicHeaders(),
@@ -74,7 +73,6 @@ export default class {
     return fetch(url, {
       method: "DELETE",
       headers: this.getPrivateHeaders()
-      // body: JSON.stringify(data)
     })
   }
 

@@ -12,7 +12,7 @@ function App() {
   const history = useHistory()
   const searchString = history.location.search
   const urlParameters = new URLSearchParams(searchString)
-  // console.log(searchString)
+
   const [customerList, setCustomerList] = useState([])
   const [user, setUser] = useState({})
   const [uid, setUid] = useState(urlParameters.get("uid"))
@@ -55,8 +55,3 @@ function App() {
   )
 }
 export default App
-// </CustomerContext.Provider>
-// <UserContext.Provider value={{ user, setUser }}>
-// </UserContext.Provider>
-
-// {token ? <HomePage /> : <LoginPage />}

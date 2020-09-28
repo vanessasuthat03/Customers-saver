@@ -34,7 +34,6 @@ const DetailStyle = styled(HomeStyle)`
 const NameStyle = styled.div`
   font-size: 30px;
   padding: 0 10% 0 10%;
-  // color: #222831;
   color: #eeeeee;
   border-bottom: 5px solid #fab95b;
   background-color: black;

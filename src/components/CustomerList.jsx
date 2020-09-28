@@ -44,7 +44,6 @@ export default function CustomerList({ createCustomerList }) {
   useEffect(() => {
     createCustomerList()
   }, [])
-  console.log("customerList", customerList)
 
   return (
     <HomePageStyle>
