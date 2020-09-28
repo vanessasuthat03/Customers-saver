@@ -2,7 +2,7 @@ import React from "react"
 import { useForm } from "react-hook-form"
 import styled from "styled-components"
 
-const InputStyle = styled.div`
+export const InputStyle = styled.div`
   width: 95%;
   margin: auto;
   background-color: black;
@@ -20,14 +20,14 @@ const InputStyle = styled.div`
     color: #e11d74;
   }
 `
-const CreatFormStyle = styled.div`
+export const CreatFormStyle = styled.div`
   display: flex;
   flex-direction: column;
   width: 50%;
   margin 0 auto;
   
 `
-const ButtonStyle = styled.button`
+export const ButtonStyle = styled.button`
   padding: 0 35px;
   margin: 30px auto 50px;
   border-radius: 7px;
