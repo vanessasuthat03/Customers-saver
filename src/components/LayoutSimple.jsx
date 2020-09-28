@@ -17,7 +17,7 @@ const HeaderLayoutStyle = styled.div`
 `
 
 const HomeStyle = styled.div`
-  color: #222831;
+  // color: #222831;
   font-size: 55px;
 
   position: absolute;
@@ -26,6 +26,11 @@ const HomeStyle = styled.div`
 
   a {
     text-decoration: none;
+    color: black;
+  }
+  a:hover {
+    font-size: 75px;
+    color: #e11d74;
   }
 `
 const DetailStyle = styled(HomeStyle)`
