@@ -1,26 +1,62 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react"
+import { Switch, Route, useHistory } from "react-router-dom"
+import RegisterPage from "./pages/RegisterPage"
+import ActivateUserPage from "./pages/ActivateUserPage"
+import LoginPage from "./pages/LoginPage.jsx"
+import HomePage from "./pages/HomePage.jsx"
+import { CustomerContext } from "./contexts/CustomerContext"
+import { UserContext } from "./contexts/CustomerContext"
+import DetailPage from "./pages/DetailPage"
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+  const history = useHistory()
+  const searchString = history.location.search
+  const urlParameters = new URLSearchParams(searchString)
+  // console.log(searchString)
+  const [customerList, setCustomerList] = useState([])
+  const [user, setUser] = useState({})
+  const [uid, setUid] = useState(urlParameters.get("uid"))
+  const [token, setToken] = useState(urlParameters.get("token"))
 
-export default App;
+  return (
+    <div>
+      <Switch>
+        <UserContext.Provider value={{ user, setUser }}>
+          <CustomerContext.Provider value={{ customerList, setCustomerList }}>
+            <Route
+              path="/customer/:id"
+              render={props => <DetailPage {...props} />}
+            />
+
+            <Route path="/home">
+              <HomePage />
+            </Route>
+
+            <Route path="/login">
+              {uid && token ? (
+                <ActivateUserPage
+                  token={token}
+                  setToken={setToken}
+                  uid={uid}
+                  setUid={setUid}
+                />
+              ) : (
+                <LoginPage />
+              )}
+            </Route>
+
+            <Route exact path="/">
+              <RegisterPage />
+            </Route>
+          </CustomerContext.Provider>
+        </UserContext.Provider>
+      </Switch>
+    </div>
+  )
+}
+export default App
+// </CustomerContext.Provider>
+// <UserContext.Provider value={{ user, setUser }}>
+// </UserContext.Provider>
+
+// {token ? <HomePage /> : <LoginPage />}
