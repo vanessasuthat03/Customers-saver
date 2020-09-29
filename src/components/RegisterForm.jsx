@@ -67,7 +67,7 @@ export default function RegisterForm() {
   function handleRegister(data) {
     userKit.register(data)
   }
-  console.log("hej igen")
+
   return (
     <div>
       <Headers />

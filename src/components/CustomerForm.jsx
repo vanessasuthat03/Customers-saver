@@ -6,6 +6,7 @@ const InputStyle = styled.div`
   width: 95%;
   margin: auto;
   background-color: black;
+  text-align: center;
 
   input {
     font-size: 16px;
@@ -63,6 +64,7 @@ export default function CustomerForm({
       handleEditCustomer(data)
     }
   }
+  console.log("hej från customer form")
   return (
     <InputStyle>
       <form onSubmit={handleSubmit(onSubmit)}>

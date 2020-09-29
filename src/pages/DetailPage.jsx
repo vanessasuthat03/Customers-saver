@@ -5,7 +5,6 @@ import CustomerForm from "../components/CustomerForm"
 import LayoutSimple from "../components/LayoutSimple"
 import { UserContext } from "../contexts/CustomerContext.js"
 import styled from "styled-components"
-import HomeCreate from "../components/CreateCustomer"
 
 const DetailContainer = styled.div`
   background-color: #e11d74;
@@ -15,14 +14,18 @@ const DetailContainer = styled.div`
 
 const DetailList = styled.div`
   color: black;
-  font-size: 20px;
+  font-size: 30px;
   margin: 0 auto;
-  width: 300px;
+  width: 500px;
   text-align: center;
   padding: 40px;
+  font-family: "Peddana", serif;
 
   p {
-    margin-top: 0;
+    margin: 0;
+  }
+  span {
+    color: #fab95b;
   }
 `
 
@@ -41,7 +44,7 @@ const DetailButton = styled.div`
   font-family: "Peddana", serif;
   padding-left: 68px;
 `
-const EditButton = styled.button`
+const EditButton = styled.a`
   color: black;
   background-color: #fab95b;
   font-family: "Peddana", serif;
@@ -118,15 +121,17 @@ export default function DetailPage(props) {
         history.push("/home")
       })
   }
-
+  console.log("hajjjkk")
   return (
     <div>
       <LayoutSimple user={user} />
 
       <ButtonContainer>
-        <p>Customer Detail</p>
+        <p>Customer Detail test</p>
         <DetailButton>
-          <EditButton onClick={showEditInput}>Edit</EditButton>
+          <EditButton herf="#edit" onClick={showEditInput}>
+            Edit
+          </EditButton>
           <DeleteButton onClick={handleDeleteCustomer}>Delete</DeleteButton>
         </DetailButton>
       </ButtonContainer>
@@ -160,8 +165,8 @@ export default function DetailPage(props) {
           </DetailList>
         </DetailContainer>
       )}
-      <HomeCreate>
-        <div>
+      <div>
+        <div id="edit">
           {editInput && (
             <CustomerForm
               handleEditCustomer={handleEditCustomer}
@@ -169,7 +174,7 @@ export default function DetailPage(props) {
             />
           )}
         </div>
-      </HomeCreate>
+      </div>
     </div>
   )
 }

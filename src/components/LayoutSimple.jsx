@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import headerimage from "../images/headerimage.png"
 import styled from "styled-components"
 import UserKit from "../data/UserKit"
-import { UserContext, CustomerContext } from "../contexts/CustomerContext"
+import { UserContext } from "../contexts/CustomerContext"
 
 const Img = styled.img`
   width: 100%;
@@ -33,9 +33,7 @@ const HomeStyle = styled.div`
     color: #e11d74;
   }
 `
-const DetailStyle = styled(HomeStyle)`
-  left: 80%;
-`
+
 const NameStyle = styled.div`
   font-size: 30px;
   padding: 0 10% 0 10%;
@@ -64,8 +62,8 @@ export default function LayoutSimple() {
   useEffect(() => {
     userKit
       .getMe()
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         setUser(data)
       })
   }, [])
