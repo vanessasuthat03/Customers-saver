@@ -83,7 +83,7 @@ export default function DetailPage(props) {
     paymentTerm: paymentTerm,
     website: website,
     email: email,
-    phoneNumber: phoneNumber
+    phoneNumber: phoneNumber,
   }
 
   function showEditInput() {
@@ -93,8 +93,8 @@ export default function DetailPage(props) {
   function handleEditCustomer(data) {
     userKit
       .editCustomerDetail({ id, data })
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         handleGetDetail()
         setEditInput(false)
       })
@@ -103,8 +103,8 @@ export default function DetailPage(props) {
   function handleGetDetail() {
     userKit
       .getDetail(id)
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         setDetailId(data)
       })
   }
@@ -113,7 +113,7 @@ export default function DetailPage(props) {
     userKit
       .deleteCustomer({ id, data })
 
-      .then(data => {
+      .then((data) => {
         setDetailId(data)
         history.push("/home")
       })
@@ -142,22 +142,18 @@ export default function DetailPage(props) {
               Organisation Number: <span>{organisationNr}</span>
             </p>
             <p>
-              {" "}
               VatNr: <span>{vatNr}</span>
             </p>
             <p>
               Reference: <span>{reference}</span>
             </p>
             <p>
-              {" "}
               Payment: Term <span>{paymentTerm}</span>
             </p>
             <p>
-              {" "}
               Website: <span>{website}</span>
             </p>
             <p>
-              {" "}
               Email: <span>{email}</span>
             </p>
             <p>
