@@ -3,9 +3,6 @@ import { useForm } from "react-hook-form"
 import UserKit from "../data/UserKit"
 import styled from "styled-components"
 import Headers from "../components/Headers"
-import InputStyle from "../components/CustomerForm"
-import CreateFormStyle from "../components/CustomerForm"
-import ButtonStyle from "../components/CustomerForm"
 
 const FormStyle = styled.div`
   text-align: center;
@@ -23,6 +20,41 @@ const FormStyle = styled.div`
     font-size: 17px;
   }
 `
+const InputStyle = styled.div`
+  width: 95%;
+  margin: auto;
+  background-color: black;
+
+  input {
+    font-size: 16px;
+    padding: 8px;
+    border: none;
+    border-bottom: 1px solid #838383;
+    margin: 40px 13px 0;
+    background-color: black;
+    color: white;
+  }
+  p {
+    color: #e11d74;
+  }
+`
+const CreatFormStyle = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin 0 auto;
+  
+`
+const ButtonStyle = styled.button`
+  padding: 0 35px;
+  margin: 30px auto 50px;
+  border-radius: 7px;
+  background: #e11d74;
+  color: white;
+  border: none;
+  font-size: 25px;
+  font-family: "Peddana", serif;
+`
 
 export default function RegisterForm() {
   const { register, handleSubmit, errors } = useForm()
@@ -35,7 +67,7 @@ export default function RegisterForm() {
   function handleRegister(data) {
     userKit.register(data)
   }
-
+  console.log("hej igen")
   return (
     <div>
       <Headers />
@@ -44,7 +76,7 @@ export default function RegisterForm() {
         <p>Enter details to register</p>
         <InputStyle>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <CreateFormStyle>
+            <CreatFormStyle>
               <input
                 type="text"
                 name="firstName"
@@ -81,7 +113,9 @@ export default function RegisterForm() {
                 placeholder="Email"
                 ref={register({
                   required: true,
-                  pattern: { value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i }
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  },
                 })}
               />
               {errors.email && errors.email.type === "required" && (
@@ -95,7 +129,7 @@ export default function RegisterForm() {
                 name="password"
                 placeholder="Password"
                 ref={register({
-                  required: true
+                  required: true,
                 })}
               />
               {errors.password && errors.password.type === "required" && (
@@ -108,7 +142,7 @@ export default function RegisterForm() {
                 placeholder="Organisation Name"
                 ref={register({
                   required: true,
-                  minLength: 3
+                  minLength: 3,
                 })}
               />
               {errors.organisationName &&
@@ -126,14 +160,14 @@ export default function RegisterForm() {
                 placeholder="Organisation Kind (0,1,2)"
                 ref={register({
                   required: true,
-                  maxLength: 1
+                  maxLength: 1,
                 })}
               />
               {errors.organisationKind &&
                 errors.organisationKind.type === "required" && (
                   <p>You can type in 0, 1 or 2 in this field. </p>
                 )}
-            </CreateFormStyle>
+            </CreatFormStyle>
             <ButtonStyle type="submit">Register</ButtonStyle>
           </form>
         </InputStyle>

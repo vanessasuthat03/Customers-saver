@@ -2,7 +2,7 @@ import React from "react"
 import { useForm } from "react-hook-form"
 import styled from "styled-components"
 
-export const InputStyle = styled.div`
+const InputStyle = styled.div`
   width: 95%;
   margin: auto;
   background-color: black;
@@ -20,14 +20,14 @@ export const InputStyle = styled.div`
     color: #e11d74;
   }
 `
-export const CreatFormStyle = styled.div`
+const CreatFormStyle = styled.div`
   display: flex;
   flex-direction: column;
   width: 50%;
   margin 0 auto;
   
 `
-export const ButtonStyle = styled.button`
+const ButtonStyle = styled.button`
   padding: 0 35px;
   margin: 30px auto 50px;
   border-radius: 7px;
@@ -41,10 +41,10 @@ export const ButtonStyle = styled.button`
 export default function CustomerForm({
   handleCreateCustomer,
   handleEditCustomer,
-  preloadedValues
+  preloadedValues,
 }) {
   const { register, handleSubmit, errors } = useForm({
-    defaultValues: preloadedValues
+    defaultValues: preloadedValues,
   })
 
   const onSubmit = (data, e) => {
@@ -74,7 +74,7 @@ export default function CustomerForm({
             ref={register({
               required: true,
               minLength: 3,
-              maxLength: 50
+              maxLength: 50,
             })}
           />
           {errors.name && errors.name.type === "required" && (
@@ -117,7 +117,7 @@ export default function CustomerForm({
               required: true,
               minLength: 12,
               maxLength: 12,
-              pattern: { value: /[SE-se]+[0-9]/ }
+              pattern: { value: /[SE-se]+[0-9]/ },
             })}
           />
           {errors.vatNr && errors.vatNr.type === "required" && (
@@ -161,7 +161,7 @@ export default function CustomerForm({
             placeholder="Website"
             ref={register({
               required: true,
-              pattern: { value: /www.+[a-zA-Z0-9.-]+\.[a-z]/ }
+              pattern: { value: /www.+[a-zA-Z0-9.-]+\.[a-z]/ },
             })}
           />
           {errors.website && errors.website.type === "required" && (
@@ -176,7 +176,7 @@ export default function CustomerForm({
             placeholder="Email"
             ref={register({
               required: true,
-              pattern: { value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i }
+              pattern: { value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i },
             })}
           />
           {errors.email && errors.email.type === "required" && (
