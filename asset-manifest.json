@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Customers-saver/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/Customers-saver/static/js/main.97fd401d.chunk.js",
-    "main.js.map": "/Customers-saver/static/js/main.97fd401d.chunk.js.map",
+    "main.js": "/Customers-saver/static/js/main.bfb4f867.chunk.js",
+    "main.js.map": "/Customers-saver/static/js/main.bfb4f867.chunk.js.map",
     "runtime-main.js": "/Customers-saver/static/js/runtime-main.79bb1bcc.js",
     "runtime-main.js.map": "/Customers-saver/static/js/runtime-main.79bb1bcc.js.map",
     "static/js/2.516a1f02.chunk.js": "/Customers-saver/static/js/2.516a1f02.chunk.js",
     "static/js/2.516a1f02.chunk.js.map": "/Customers-saver/static/js/2.516a1f02.chunk.js.map",
     "index.html": "/Customers-saver/index.html",
-    "precache-manifest.a389f5961a77dc90daa4844c450a484f.js": "/Customers-saver/precache-manifest.a389f5961a77dc90daa4844c450a484f.js",
+    "precache-manifest.17e321cc9e1f404f8a43b3bec87b3e34.js": "/Customers-saver/precache-manifest.17e321cc9e1f404f8a43b3bec87b3e34.js",
     "service-worker.js": "/Customers-saver/service-worker.js",
     "static/css/main.5ecd60fb.chunk.css.map": "/Customers-saver/static/css/main.5ecd60fb.chunk.css.map",
     "static/js/2.516a1f02.chunk.js.LICENSE.txt": "/Customers-saver/static/js/2.516a1f02.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.79bb1bcc.js",
     "static/js/2.516a1f02.chunk.js",
     "static/css/main.5ecd60fb.chunk.css",
-    "static/js/main.97fd401d.chunk.js"
+    "static/js/main.bfb4f867.chunk.js"
   ]
 }
