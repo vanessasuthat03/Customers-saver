@@ -41,7 +41,7 @@ const DetailButton = styled.div`
   font-family: "Peddana", serif;
   padding-left: 68px;
 `
-const EditButton = styled.a`
+const EditButton = styled.button`
   color: black;
   background-color: #fab95b;
   font-family: "Peddana", serif;
@@ -126,9 +126,7 @@ export default function DetailPage(props) {
       <ButtonContainer>
         <p>Customer Detail</p>
         <DetailButton>
-          <EditButton href="#edit" onClick={showEditInput}>
-            Edit
-          </EditButton>
+          <EditButton onClick={showEditInput}>Edit</EditButton>
           <DeleteButton onClick={handleDeleteCustomer}>Delete</DeleteButton>
         </DetailButton>
       </ButtonContainer>
@@ -163,7 +161,7 @@ export default function DetailPage(props) {
         </DetailContainer>
       )}
       <HomeCreate>
-        <div id="edit">
+        <div>
           {editInput && (
             <CustomerForm
               handleEditCustomer={handleEditCustomer}
